@@ -153,8 +153,7 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
                         _controller!.seekTo(Duration(seconds: position!));
                         _seek = false;
                       }
-                      SystemChrome.setEnabledSystemUIOverlays(
-                          [SystemUiOverlay.bottom]);
+                      
 
                       //Отрисовка элементов плеера
                       return Stack(
@@ -201,11 +200,11 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
                 child: Container(
                   width: doubleTapLWidthFS! / 2 - 30,
                   height: doubleTapLHeightFS! - 44,
-                  margin:
-                      EdgeInsets.fromLTRB(0, 0, doubleTapLWidthFS! / 2 + 30, 40),
+                  margin: EdgeInsets.fromLTRB(
+                      0, 0, doubleTapLWidthFS! / 2 + 30, 40),
                   decoration: BoxDecoration(
-                    //color: Colors.red,
-                  ),
+                      //color: Colors.red,
+                      ),
                 ),
                 //Редактируем размер области дабл тапа при показе оверлея.
                 // Сделано для открытия кнопок "Во весь экран" и "Качество"
@@ -238,8 +237,8 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
                   margin: EdgeInsets.fromLTRB(doubleTapRWidthFS! / 2 + 45, 0, 0,
                       doubleTapLMarginFS + 20),
                   decoration: BoxDecoration(
-                    //color: Colors.red,
-                  ),
+                      //color: Colors.red,
+                      ),
                 ),
                 //Редактируем размер области дабл тапа при показе оверлея.
                 // Сделано для открытия кнопок "Во весь экран" и "Качество"
@@ -340,7 +339,8 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
               ),
               Container(
                 margin: EdgeInsets.only(
-                    top: videoHeight! - 80, left: videoWidth! + videoMargin - 50),
+                    top: videoHeight! - 80,
+                    left: videoWidth! + videoMargin - 50),
                 child: IconButton(
                     alignment: AlignmentDirectional.center,
                     icon: Icon(Icons.fullscreen, size: 30.0),
@@ -354,17 +354,6 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
                       });
                       Navigator.pop(
                           context, _controller!.value.position.inSeconds);
-                    }),
-              ),
-              Container(
-                margin: EdgeInsets.only(left: videoWidth! + videoMargin - 48),
-                child: IconButton(
-                    icon: Icon(Icons.settings, size: 26.0),
-                    onPressed: () {
-                      position = _controller!.value.position.inSeconds;
-                      _seek = true;
-                      _settingModalBottomSheet(context);
-                      setState(() {});
                     }),
               ),
               Container(
