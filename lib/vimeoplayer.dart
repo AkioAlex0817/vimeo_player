@@ -86,7 +86,6 @@ class _VimeoPlayerState extends State<VimeoPlayer> {
     //На странице видео преимущество за портретной ориентацией
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
-  
 
     super.initState();
   }
@@ -179,8 +178,8 @@ class _VimeoPlayerState extends State<VimeoPlayer> {
               margin: EdgeInsets.fromLTRB(
                   0, 10, doubleTapLWidth / 2 + 30, doubleTapLMargin + 20),
               decoration: BoxDecoration(
-                //color: Colors.red,
-              ),
+                  //color: Colors.red,
+                  ),
             ),
 
             // Изменение размера блоков дабл тапа. Нужно для открытия кнопок
@@ -215,8 +214,8 @@ class _VimeoPlayerState extends State<VimeoPlayer> {
               margin: EdgeInsets.fromLTRB(doubleTapRWidth / 2 + 45,
                   doubleTapRMargin, 0, doubleTapRMargin + 20),
               decoration: BoxDecoration(
-                //color: Colors.red,
-              ),
+                  //color: Colors.red,
+                  ),
             ),
             // Изменение размера блоков дабл тапа. Нужно для открытия кнопок
             // "Во весь экран" и "Качество" при включенном overlay
@@ -318,7 +317,8 @@ class _VimeoPlayerState extends State<VimeoPlayer> {
               ),
               Container(
                 margin: EdgeInsets.only(
-                    top: videoHeight! - 70, left: videoWidth! + videoMargin - 50),
+                    top: videoHeight! - 70,
+                    left: videoWidth! + videoMargin - 50),
                 child: IconButton(
                     alignment: AlignmentDirectional.center,
                     icon: Icon(Icons.fullscreen, size: 30.0),
@@ -357,17 +357,6 @@ class _VimeoPlayerState extends State<VimeoPlayer> {
                         _controller!.play();
                         _seek = true;
                       });
-                    }),
-              ),
-              Container(
-                margin: EdgeInsets.only(left: videoWidth! + videoMargin - 48),
-                child: IconButton(
-                    icon: Icon(Icons.settings, size: 26.0),
-                    onPressed: () {
-                      position = _controller!.value.position.inSeconds;
-                      _seek = true;
-                      _settingModalBottomSheet(context);
-                      setState(() {});
                     }),
               ),
               Container(
